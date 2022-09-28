@@ -12,7 +12,7 @@ RUN apk add --update util-linux
 
 FROM ghcr.io/weaveworks/tf-runner:v0.13.0-rc.1
 
-COPY --from=builder "/usr/bin/aws" "/usr/bin/aws"
+COPY --from=builder "/usr/bin/aws" "/bin/aws"
 
 
 ENTRYPOINT [ "/sbin/tini", "--", "tf-runner" ]
