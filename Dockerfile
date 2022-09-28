@@ -8,8 +8,6 @@ RUN apk add --no-cache \
         awscli \
     && rm -rf /var/cache/apk/*
 
-RUN apk add --update util-linux
-
 FROM ghcr.io/weaveworks/tf-runner:v0.13.0-rc.1
 
 COPY --from=builder "/usr/bin/aws" "/bin/aws"
